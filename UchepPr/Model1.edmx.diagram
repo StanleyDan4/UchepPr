@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="03e9c4f88e024e6db03784e5e3d74d37" Name="Diagram1">
+        <EntityTypeShape EntityType="praktikaModel.Agents" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.ApartmentDemands" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.Clients" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.Deals" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.Demands" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.Districts" Width="1.5" PointX="1.5" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.HouseDemands" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.LandDemands" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.ObjectType" Width="1.5" PointX="0.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.RealtyObject" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.Supplies" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="praktikaModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="praktikaModel.FK__Demands__AgentId__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Supplies__AgentI__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Demands__Apartme__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Demands__ClientI__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Supplies__Client__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Deals__DemandID__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Deals__SupplyID__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Demands__HouseDe__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Demands__LandDem__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Demands__ObjectT__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__RealtyObj__Distr__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__RealtyObj__Objec__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="praktikaModel.FK__Supplies__Realty__5165187F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

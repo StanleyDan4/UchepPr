@@ -1,0 +1,80 @@
+﻿<Window x:Class="UchepPr.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UchepPr"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Menu Height="20" VerticalAlignment="Top">
+            <MenuItem Header="Пользователи" >
+                <MenuItem Header="Клиенты" Click="MenuItem_Click"></MenuItem>
+                <MenuItem Header="Риелторы" Click="MenuItem_Click_1">
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="Поиск" Click="MenuItem_Click_2"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Объекты недвижимости" Click="MenuItem_Click_3">
+                <!--<MenuItem Header="Поиск по адресу" Click="MenuItem_Click_4"></MenuItem>-->
+            </MenuItem>
+            <MenuItem Header="Предложение" >
+                <MenuItem Header="Предложение" Click="MenuItem_Click_5"></MenuItem>
+                <MenuItem Header="Потребность" Click="MenuItem_Click_6"></MenuItem>
+                <MenuItem Header="Потребность в доме" Click="MenuItem_Click_7"></MenuItem>
+                <MenuItem Header="Потребность в квартире" Click="MenuItem_Click_8"></MenuItem>
+                <MenuItem Header="Потребность в земле" Click="MenuItem_Click_9"></MenuItem>
+                <Separator/>
+            </MenuItem>
+            <MenuItem Header="Сделки" Click="MenuItem_Click_10"></MenuItem>
+        </Menu>
+        <DataGrid Name="dgClients" AutoGenerateColumns="False" Margin="10,30,152,100" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                <DataGridTextColumn Header="FirstName" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="MiddleName" Binding="{Binding MiddleName}"/>
+                <DataGridTextColumn Header="LastName" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!-- Панель для добавления нового пользователя -->
+        <StackPanel Orientation="Vertical" Margin="0,20,0,10" HorizontalAlignment="Right" Width="150">
+            <Label Content="ID:"/>
+            <TextBox x:Name="txtID" Margin="5"/>
+            <Label Content="First Name:"/>
+            <TextBox x:Name="txtFirstName" Margin="5"/>
+            <Label Content="Middle Name:"/>
+            <TextBox x:Name="txtMiddleName" Margin="5"/>
+            <Label Content="Last Name:"/>
+            <TextBox x:Name="txtLastName" Margin="5"/>
+            <Label Content="Phone:"/>
+            <TextBox x:Name="txtPhone" Margin="5"/>
+            <Label Content="Email:"/>
+            <TextBox x:Name="txtEmail" Margin="5"/>
+            <Button Content="Add New Client" Click="AddClient_Click" Margin="5"/>
+            <Button Content="Изменить клиента" Click="UpdateClient_Click" Margin="5"/>
+            <!--<Button Content="Обновить" Click="Refresh_Click" Margin="5" />-->
+        </StackPanel>
+        <Grid Margin="0,319,0,0">
+            <DataGrid Name="dgClientDemands" AutoGenerateColumns="False" Margin="0,0,0,10" Height="80" Width="400" VerticalAlignment="Bottom">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="Город" Binding="{Binding Address_City}"/>
+                    <DataGridTextColumn Header="Улица" Binding="{Binding Address_Street}"/>
+                    <DataGridTextColumn Header="Мин. Цена" Binding="{Binding MinPrice}"/>
+                    <DataGridTextColumn Header="Макс. Цена" Binding="{Binding MaxPrice}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Удалить клиента" Click="DeleteBook_Click" Width="100" Height="35" Grid.Row="1" HorizontalAlignment="Left" Margin="10"/>
+            
+        </Grid>
+
+    </Grid>
+
+</Window>

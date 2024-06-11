@@ -1,0 +1,28 @@
+﻿<Window x:Class="UchepPr.SearchRealtyObject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UchepPr"
+        mc:Ignorable="d"
+        Title="SearchRealtyObject" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <Label Content="Город:" />
+            <TextBox x:Name="txtCity" Margin="5" />
+
+            <Label Content="Улица:" />
+            <TextBox x:Name="txtStreet" Margin="5" />
+
+            <Label Content="Дом:" />
+            <TextBox x:Name="txtHouse" Margin="5" />
+
+            <Label Content="Номер квартиры:" />
+            <TextBox x:Name="txtNumber" Margin="5" />
+
+            <Button Content="Поиск" Click="Search_Click" Margin="5" />
+
+            <TextBlock x:Name="txtResults" TextWrapping="Wrap" Margin="5" />
+        </StackPanel>
+    </Grid>
+</Window>

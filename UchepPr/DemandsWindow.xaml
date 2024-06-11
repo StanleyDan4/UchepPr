@@ -1,0 +1,100 @@
+﻿<Window x:Class="UchepPr.DemandsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UchepPr"
+        mc:Ignorable="d"
+        Title="DemandsWindow" Height="450" Width="800">
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Menu Height="20" VerticalAlignment="Top">
+                <MenuItem Header="Пользователи">
+                    <MenuItem Header="Клиенты" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Риелторы" Click="MenuItem_Click_1">
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Header="Поиск" Click="MenuItem_Click_2"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Объекты недвижимости" Click="MenuItem_Click_6">
+                    <!--<MenuItem Header="Поиск по адресу" Click="MenuItem_Click_3"></MenuItem>-->
+                </MenuItem>
+                <MenuItem Header="Предложение" >
+                    <MenuItem Header="Предложение" Click="MenuItem_Click_5"></MenuItem>
+                    <MenuItem Header="Потребность" ></MenuItem>
+                    <MenuItem Header="Потребность в доме" Click="MenuItem_Click_7"></MenuItem>
+                    <MenuItem Header="Потребность в квартире" Click="MenuItem_Click_8"></MenuItem>
+                    <MenuItem Header="Потребность в земле" Click="MenuItem_Click_9"></MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Поиск предложения"></MenuItem>
+                    <MenuItem Header="Поиск потребности"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Сделки" Click="MenuItem_Click_10"></MenuItem>
+            </Menu>
+            <DataGrid Name="dgDemands" AutoGenerateColumns="False" Width="550" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25" SelectionChanged="dgDemands_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="Город" Binding="{Binding Address_City}"/>
+                    <DataGridTextColumn Header="Улица" Binding="{Binding Address_Street}"/>
+                    <DataGridTextColumn Header="Дом" Binding="{Binding Address_House}"/>
+                    <DataGridTextColumn Header="Номер дома" Binding="{Binding Address_Number}"/>
+                    <DataGridTextColumn Header="Мин. Цена" Binding="{Binding MinPrice}"/>
+                    <DataGridTextColumn Header="Макс.Цена" Binding="{Binding MaxPrice}"/>
+                    <DataGridTextColumn Header="ID клиента" Binding="{Binding ClientId}"/>
+                    <DataGridTextColumn Header="ID агента" Binding="{Binding AgentId}"/>
+                    <DataGridTextColumn Header="Потребность в доме" Binding="{Binding HouseDemandsId}"/>
+                    <DataGridTextColumn Header="Потребность в кв." Binding="{Binding ApartmentDemandsId}"/>
+                    <DataGridTextColumn Header="Потребность в земле" Binding="{Binding LandDemandsId}"/>
+                    <DataGridTextColumn Header="Тип объекта" Binding="{Binding ObjectTypeId}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Grid.Column="1" Margin="10">
+                <Label Content="ID:"></Label>
+                <TextBox x:Name="txtID"/>
+                <Label Content="Город:"/>
+                <TextBox x:Name="txtCity" Margin="5"/>
+
+                <Label Content="Улица:"/>
+                <TextBox x:Name="txtStreet" Margin="5"/>
+
+                <Label Content="Дом:"/>
+                <TextBox x:Name="txtHouse" Margin="5"/>
+
+                <Label Content="Номер дома:"/>
+                <TextBox x:Name="txtHouseNumber" Margin="5"/>
+
+                <Label Content="Мин. Цена:"/>
+                <TextBox x:Name="txtMinPrice" Margin="5"/>
+
+                <Label Content="Макс. Цена:"/>
+                <TextBox x:Name="txtMaxPrice" Margin="5"/>
+
+                <Label Content="Клиент:"/>
+                <ComboBox x:Name="cmbClients" DisplayMemberPath="ID" SelectedValuePath="ID" Margin="5"/>
+
+                <Label Content="Агент:"/>
+                <ComboBox x:Name="cmbAgents" DisplayMemberPath="ID" SelectedValuePath="ID" Margin="5"/>
+
+                <Label Content="Потребность в доме:"/>
+                <TextBox x:Name="txtHouseDemand" Margin="5"/>
+
+                <Label Content="Потребность в квартире:"/>
+                <TextBox x:Name="txtApartmentDemand" Margin="5"/>
+
+                <Label Content="Потребность в земле:"/>
+                <TextBox x:Name="txtLandDemand" Margin="5"/>
+
+                <Label Content="Тип объекта:"/>
+                <TextBox x:Name="txtObjectType" Margin="5"/>
+
+                <Button Content="Добавить или изменить" Click="SaveDemandButton_Click" Margin="5"/>
+                <Button Content="Удалить" Click="DeleteDemandButton_Click" Margin="5"/>
+                <!--<Button Content="Изменить" Click="UpdateDemandButton_Click" Margin="5"/>-->
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
